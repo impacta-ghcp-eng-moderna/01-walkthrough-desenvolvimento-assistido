@@ -33,7 +33,7 @@ critérios, contratos, comportamento e evidências.
 
 O checkpoint `checkpoint/00-inicio` contém somente:
 
-- um Codespace com .NET 10, SQLite e as extensões necessárias;
+- um Codespace com .NET 10 e as extensões necessárias;
 - o diretório `src` vazio.
 
 A solução e os demais artefatos serão criados durante a aula.

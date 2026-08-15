@@ -17,7 +17,6 @@ SQLite, mas sem uma solução pronta.
 
    ```bash
    dotnet --version
-   sqlite3 --version
    ```
 
 O diretório `src` estará vazio de propósito. A solução será criada durante a aula.
