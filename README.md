@@ -18,6 +18,13 @@ critérios, contratos, comportamento e evidências.
 
 [![Iniciar walkthrough](https://img.shields.io/badge/Iniciar%20walkthrough-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=impacta-ghcp-eng-moderna&template_name=01-desenvolvimento-assistido&owner=%40me&name=impacta-ghcp-eng-moderna-01-desenvolvimento-assistido&description=M%C3%B3dulo+1%3A+do+requisito+%C3%A0+aplica%C3%A7%C3%A3o)
 
+> [!IMPORTANT]
+> ## Antes de criar o repositório: marque **Include all branches**
+>
+> Na tela aberta pelo botão, ative obrigatoriamente a opção **Include all branches**
+> antes de selecionar **Create repository**. Sem ela, os checkpoints da aula não serão
+> copiados e você não conseguirá acompanhar o walkthrough a partir dos estados preparados.
+
 > [!WARNING]
 > Depois da cópia, você continuará vendo inicialmente esta página. Aguarde cerca de
 > 20 segundos, atualize-a e abra a issue indicada no novo README.
