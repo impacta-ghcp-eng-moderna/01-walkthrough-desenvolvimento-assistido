@@ -37,7 +37,7 @@ Operações adicionais de API podem ser implementadas depois com contratos expl�
 | `id` | identificador | gerado pelo sistema |
 | `title` | texto | obrigatório e não vazio |
 | `description` | texto | obrigatório e não vazio |
-| `startDate` | data no formato `YYYY-MM-DD` | obrigatória |
+| `startDate` | data no formato `YYYY-MM-DD` | obrigatória e exclusiva no catálogo |
 | `durationHours` | inteiro | obrigatório e maior que zero |
 
 ## Contrato da API para criação
@@ -66,6 +66,20 @@ Operações adicionais de API podem ser implementadas depois com contratos expl�
   }
   ```
 
+### Conflito
+
+- Status: `409 Conflict`
+- Ocorre quando já existe um treinamento com a mesma `startDate`
+- Corpo no formato:
+
+  ```json
+  {
+    "errors": {
+      "startDate": ["Já existe um treinamento com esta data de início."]
+    }
+  }
+  ```
+
 ## Comportamento da interface
 
 - desabilitar ou proteger novo envio enquanto a requisição estiver em andamento;
@@ -82,6 +96,7 @@ Operações adicionais de API podem ser implementadas depois com contratos expl�
 5. Dados válidos produzem `201`, um identificador e um recurso consultável depois da criação.
 6. Pela interface, dados válidos produzem confirmação e o novo item aparece na lista.
 7. Pela interface, uma falha preserva os dados preenchidos e apresenta mensagem útil.
+8. Dado um treinamento já cadastrado para uma data de início, quando outro treinamento for enviado com a mesma `startDate`, então a API retorna `409` e identifica o campo `startDate`, sem armazenar o segundo treinamento.
 
 ## Evidências esperadas
 
@@ -89,6 +104,7 @@ Operações adicionais de API podem ser implementadas depois com contratos expl�
 | --- | --- |
 | validação de entrada | resposta HTTP e teste automatizado |
 | criação válida | resposta `201` e teste automatizado |
+| exclusividade da data | resposta `409` e teste automatizado confirmando que o segundo item não foi armazenado |
 | armazenamento | consulta bem-sucedida após reiniciar a API |
 | sucesso na interface | fluxo executado no navegador |
 | erro na interface | fluxo de falha executado no navegador |
