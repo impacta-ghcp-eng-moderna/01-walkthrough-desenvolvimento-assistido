@@ -1,6 +1,5 @@
 using System.Net;
 using System.Net.Http.Json;
-using Microsoft.AspNetCore.Mvc.Testing;
 using TrainingCatalog.Application;
 
 namespace TrainingCatalog.Api.Tests;
@@ -10,7 +9,7 @@ public sealed class TrainingListingTests
     [Fact]
     public async Task ReturnsEmptyCollectionWhenCatalogHasNoTrainings()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
 
         var response = await client.GetAsync("/api/trainings");
@@ -24,7 +23,7 @@ public sealed class TrainingListingTests
     [Fact]
     public async Task ReturnsTrainingAfterItIsCreated()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
         var request = new CreateTrainingRequest(
             "Fundamentos de C#",

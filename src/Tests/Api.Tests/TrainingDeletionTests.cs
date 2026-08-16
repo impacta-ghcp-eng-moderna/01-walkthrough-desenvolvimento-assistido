@@ -1,6 +1,5 @@
 using System.Net;
 using System.Net.Http.Json;
-using Microsoft.AspNetCore.Mvc.Testing;
 using TrainingCatalog.Application;
 
 namespace TrainingCatalog.Api.Tests;
@@ -10,7 +9,7 @@ public sealed class TrainingDeletionTests
     [Fact]
     public async Task ReturnsNoContentWhenTrainingIsDeleted()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
         var createdTraining = await CreateTraining(client);
 
@@ -24,7 +23,7 @@ public sealed class TrainingDeletionTests
     [Fact]
     public async Task ReturnsNotFoundWhenIdentifierDoesNotExist()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
 
         var response = await client.DeleteAsync($"/api/trainings/{Guid.NewGuid()}");

@@ -1,7 +1,6 @@
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
-using Microsoft.AspNetCore.Mvc.Testing;
 using TrainingCatalog.Application;
 
 namespace TrainingCatalog.Api.Tests;
@@ -11,7 +10,7 @@ public sealed class TrainingUpdateTests
     [Fact]
     public async Task ReturnsUpdatedTrainingWhenRequestIsValid()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
         var createdTraining = await CreateTraining(client, "2026-09-15");
         var request = new CreateTrainingRequest(
@@ -35,7 +34,7 @@ public sealed class TrainingUpdateTests
     [Fact]
     public async Task ReturnsBadRequestWhenRequestIsInvalid()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
         var request = new CreateTrainingRequest("", "Descrição", "2026-09-15", 8);
 
@@ -49,7 +48,7 @@ public sealed class TrainingUpdateTests
     [Fact]
     public async Task ReturnsNotFoundWhenIdentifierDoesNotExist()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
         var request = new CreateTrainingRequest("Fundamentos de C#", "Introdução ao C#", "2026-09-15", 8);
 
@@ -61,7 +60,7 @@ public sealed class TrainingUpdateTests
     [Fact]
     public async Task ReturnsConflictWhenStartDateBelongsToAnotherTraining()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
         var firstTraining = await CreateTraining(client, "2026-09-15");
         await CreateTraining(client, "2026-09-16");

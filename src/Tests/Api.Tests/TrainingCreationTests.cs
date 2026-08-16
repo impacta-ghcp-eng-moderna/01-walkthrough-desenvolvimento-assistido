@@ -1,23 +1,17 @@
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
-using Microsoft.AspNetCore.Mvc.Testing;
 using TrainingCatalog.Application;
 
 namespace TrainingCatalog.Api.Tests;
 
-public sealed class TrainingCreationTests : IClassFixture<WebApplicationFactory<Program>>
+public sealed class TrainingCreationTests
 {
-    private readonly HttpClient client;
-
-    public TrainingCreationTests(WebApplicationFactory<Program> factory)
-    {
-        client = factory.CreateClient();
-    }
-
     [Fact]
     public async Task ReturnsConflictWhenStartDateAlreadyExists()
     {
+        using var factory = new TrainingCatalogApiFactory();
+        using var client = factory.CreateClient();
         var request = new CreateTrainingRequest(
             "Fundamentos de C#",
             "Introdução ao C#",

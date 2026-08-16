@@ -1,6 +1,5 @@
 using System.Net;
 using System.Net.Http.Json;
-using Microsoft.AspNetCore.Mvc.Testing;
 using TrainingCatalog.Application;
 
 namespace TrainingCatalog.Api.Tests;
@@ -10,7 +9,7 @@ public sealed class TrainingRetrievalTests
     [Fact]
     public async Task ReturnsTrainingWhenIdentifierExists()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
         var request = new CreateTrainingRequest(
             "Fundamentos de C#",
@@ -34,7 +33,7 @@ public sealed class TrainingRetrievalTests
     [Fact]
     public async Task ReturnsNotFoundWhenIdentifierDoesNotExist()
     {
-        using var factory = new WebApplicationFactory<Program>();
+        using var factory = new TrainingCatalogApiFactory();
         using var client = factory.CreateClient();
 
         var response = await client.GetAsync($"/api/trainings/{Guid.NewGuid()}");

@@ -1,10 +1,12 @@
 using System.Globalization;
+using Microsoft.EntityFrameworkCore;
 using TrainingCatalog.Application;
 using TrainingCatalog.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<ITrainingStore, InMemoryTrainingStore>();
+builder.Services.AddDbContext<TrainingCatalogDbContext>(options =>
+	options.UseSqlite(builder.Configuration.GetConnectionString("TrainingCatalog")));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -18,7 +20,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwaggerUI();
 }
 
-app.MapPost("/api/trainings", (CreateTrainingRequest request, ITrainingStore store) =>
+app.MapPost("/api/trainings", async (CreateTrainingRequest request, TrainingCatalogDbContext dbContext) =>
 {
 	var errors = new Dictionary<string, string[]>();
 
@@ -50,14 +52,22 @@ app.MapPost("/api/trainings", (CreateTrainingRequest request, ITrainingStore sto
 		return Results.BadRequest(new { errors });
 	}
 
-	var training = new Training(
-		Guid.NewGuid(),
-		request.Title!,
-		request.Description!,
-		startDate,
-		request.DurationHours);
+	var training = new TrainingEntity
+	{
+		Id = Guid.NewGuid(),
+		Title = request.Title!,
+		Description = request.Description!,
+		StartDate = startDate,
+		DurationHours = request.DurationHours
+	};
 
-	if (!store.TryAdd(training))
+	dbContext.Trainings.Add(training);
+
+	try
+	{
+		await dbContext.SaveChangesAsync();
+	}
+	catch (DbUpdateException)
 	{
 		return Results.Conflict(new
 		{
@@ -68,24 +78,33 @@ app.MapPost("/api/trainings", (CreateTrainingRequest request, ITrainingStore sto
 		});
 	}
 
-	return Results.Created($"/api/trainings/{training.Id}", training);
+	var response = training.ToTraining();
+	return Results.Created($"/api/trainings/{response.Id}", response);
 })
 	.Produces<Training>(StatusCodes.Status201Created)
 	.Produces(StatusCodes.Status400BadRequest)
 	.Produces(StatusCodes.Status409Conflict);
 
-app.MapGet("/api/trainings", (ITrainingStore store) => Results.Ok(store.GetAll()))
+app.MapGet("/api/trainings", async (TrainingCatalogDbContext dbContext) =>
+{
+	var trainings = await dbContext.Trainings
+		.AsNoTracking()
+		.Select(training => training.ToTraining())
+		.ToArrayAsync();
+
+	return Results.Ok(trainings);
+})
 	.Produces<IReadOnlyCollection<Training>>(StatusCodes.Status200OK);
 
-app.MapGet("/api/trainings/{id:guid}", (Guid id, ITrainingStore store) =>
+app.MapGet("/api/trainings/{id:guid}", async (Guid id, TrainingCatalogDbContext dbContext) =>
 {
-	var training = store.GetById(id);
-	return training is null ? Results.NotFound() : Results.Ok(training);
+	var training = await dbContext.Trainings.AsNoTracking().SingleOrDefaultAsync(training => training.Id == id);
+	return training is null ? Results.NotFound() : Results.Ok(training.ToTraining());
 })
 	.Produces<Training>(StatusCodes.Status200OK)
 	.Produces(StatusCodes.Status404NotFound);
 
-app.MapPut("/api/trainings/{id:guid}", (Guid id, CreateTrainingRequest request, ITrainingStore store) =>
+app.MapPut("/api/trainings/{id:guid}", async (Guid id, CreateTrainingRequest request, TrainingCatalogDbContext dbContext) =>
 {
 	var errors = new Dictionary<string, string[]>();
 
@@ -117,34 +136,53 @@ app.MapPut("/api/trainings/{id:guid}", (Guid id, CreateTrainingRequest request, 
 		return Results.BadRequest(new { errors });
 	}
 
-	var training = new Training(
-		id,
-		request.Title!,
-		request.Description!,
-		startDate,
-		request.DurationHours);
+	var training = await dbContext.Trainings.SingleOrDefaultAsync(training => training.Id == id);
 
-	return store.Update(training) switch
+	if (training is null)
 	{
-		UpdateTrainingResult.Updated => Results.Ok(training),
-		UpdateTrainingResult.NotFound => Results.NotFound(),
-		UpdateTrainingResult.StartDateConflict => Results.Conflict(new
+		return Results.NotFound();
+	}
+
+	training.Title = request.Title!;
+	training.Description = request.Description!;
+	training.StartDate = startDate;
+	training.DurationHours = request.DurationHours;
+
+	try
+	{
+		await dbContext.SaveChangesAsync();
+	}
+	catch (DbUpdateException)
+	{
+		return Results.Conflict(new
 		{
 			errors = new Dictionary<string, string[]>
 			{
 				["startDate"] = ["Já existe um treinamento com esta data de início."]
 			}
-		}),
-		_ => throw new InvalidOperationException("Resultado de atualização desconhecido.")
-	};
+		});
+	}
+
+	return Results.Ok(training.ToTraining());
 })
 	.Produces<Training>(StatusCodes.Status200OK)
 	.Produces(StatusCodes.Status400BadRequest)
 	.Produces(StatusCodes.Status404NotFound)
 	.Produces(StatusCodes.Status409Conflict);
 
-app.MapDelete("/api/trainings/{id:guid}", (Guid id, ITrainingStore store) =>
-    store.Delete(id) ? Results.NoContent() : Results.NotFound())
+app.MapDelete("/api/trainings/{id:guid}", async (Guid id, TrainingCatalogDbContext dbContext) =>
+{
+	var training = await dbContext.Trainings.SingleOrDefaultAsync(training => training.Id == id);
+
+	if (training is null)
+	{
+		return Results.NotFound();
+	}
+
+	dbContext.Trainings.Remove(training);
+	await dbContext.SaveChangesAsync();
+	return Results.NoContent();
+})
     .Produces(StatusCodes.Status204NoContent)
     .Produces(StatusCodes.Status404NotFound);
 

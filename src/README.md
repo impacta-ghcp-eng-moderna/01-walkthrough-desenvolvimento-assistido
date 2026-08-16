@@ -20,4 +20,5 @@ Com o .NET 10 SDK instalado, execute na raiz do repositório:
 ```bash
 dotnet restore src/TrainingCatalog.slnx
 dotnet build src/TrainingCatalog.slnx --no-restore
+dotnet test src/TrainingCatalog.slnx --no-restore
 ```
