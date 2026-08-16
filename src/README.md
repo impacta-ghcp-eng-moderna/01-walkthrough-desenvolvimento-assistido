@@ -8,7 +8,6 @@ durante os próximos incrementos:
 - `Application`: contratos e casos de uso, a serem adicionados em incremento posterior.
 - `Infrastructure`: ponto de extensão para persistência, a ser adicionado em incremento posterior.
 - `Tests/Api.Tests`: testes da API.
-- `Tests/Infrastructure.Tests`: testes da infraestrutura.
 
 Nesta etapa os projetos são somente a base da solução. Não há endpoints, persistência,
 modelos ou componentes de negócio.
