@@ -15,7 +15,4 @@
   <Folder Name="/Tests/Api.Tests/">
     <Project Path="Tests/Api.Tests/TrainingCatalog.Api.Tests.csproj" />
   </Folder>
-  <Folder Name="/Tests/Infrastructure.Tests/">
-    <Project Path="Tests/Infrastructure.Tests/TrainingCatalog.Infrastructure.Tests.csproj" />
-  </Folder>
 </Solution>
