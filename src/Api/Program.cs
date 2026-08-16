@@ -7,15 +7,28 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<TrainingCatalogDbContext>(options =>
 	options.UseSqlite(builder.Configuration.GetConnectionString("TrainingCatalog")));
+builder.Services.AddCors(options =>
+	options.AddPolicy("ClientDevelopment", policy => policy
+		.WithOrigins(
+			"http://localhost:5152",
+			"http://127.0.0.1:5152",
+			"https://localhost:7240",
+			"https://127.0.0.1:7240")
+		.AllowAnyHeader()
+		.AllowAnyMethod()));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+	app.UseHttpsRedirection();
+}
 
 if (app.Environment.IsDevelopment())
 {
+	app.UseCors("ClientDevelopment");
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
