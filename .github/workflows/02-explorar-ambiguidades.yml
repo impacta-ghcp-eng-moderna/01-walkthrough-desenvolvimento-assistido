@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 env:
-  STEP_TRIGGER_PHRASE: feito
+  STEP_TRIGGER_PHRASE: preparado
 
 jobs:
   post_step_02:

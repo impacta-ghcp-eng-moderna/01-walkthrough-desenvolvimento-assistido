@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 env:
-  STEP_TRIGGER_PHRASE: validado
+  STEP_TRIGGER_PHRASE: feito
 
 jobs:
   post_step_16:
