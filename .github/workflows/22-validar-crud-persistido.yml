@@ -14,7 +14,10 @@ env:
 
 jobs:
   post_step_22:
-    if: ${{ !github.event.repository.is_template && !github.event.issue.pull_request && contains(github.event.issue.title, 'Walkthrough: ') }}
+    if: >-
+      ${{ !github.event.repository.is_template
+      && !github.event.issue.pull_request
+      && contains(github.event.issue.title, 'Walkthrough: ') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -35,4 +38,3 @@ jobs:
             "Persistência adicionada. Agora vamos provar que todo o CRUD usa a mesma base." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
-
