@@ -36,3 +36,4 @@ jobs:
 
       - name: Run tests
         run: dotnet test src/TrainingCatalog.slnx --configuration Release --no-build --no-restore
+
