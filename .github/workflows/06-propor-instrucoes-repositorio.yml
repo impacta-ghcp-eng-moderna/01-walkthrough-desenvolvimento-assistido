@@ -14,7 +14,10 @@ env:
 
 jobs:
   post_step_06:
-    if: ${{ !github.event.repository.is_template && !github.event.issue.pull_request && contains(github.event.issue.title, 'Walkthrough: ') }}
+    if: >-
+      ${{ !github.event.repository.is_template
+      && !github.event.issue.pull_request
+      && contains(github.event.issue.title, 'Walkthrough: ') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -35,4 +38,3 @@ jobs:
             "Excelente. Agora vamos pedir ao Copilot um rascunho das repository instructions." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
-
