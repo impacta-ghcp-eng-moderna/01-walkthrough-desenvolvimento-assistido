@@ -17,4 +17,16 @@ O resultado mais importante não é ter produzido exatamente o mesmo código do 
 
 Se ainda estiver com o Pull Request aberto, mantenha-o como evidência da entrega até a orientação do instrutor.
 
-Quando tiver concluido esta etapa, comente `concluido` nesta issue para encerrar o walkthrough.
+## Limpeza opcional do ambiente
+
+Se quiser evitar uso desnecessário de recursos depois da aula, voce pode remover os artefatos criados durante o walkthrough:
+
+1. **Apague o Codespace:**
+    - Acesse a página de **Codespaces** da sua conta no GitHub.
+    - Localize o Codespace criado para este repositório.
+    - Abra o menu de ações do Codespace e escolha **Delete**.
+
+2. **Apague este repositório (opcional):**
+    - Se você nao quiser manter esta cópia como evidencia ou referência futura, va em **Settings** deste repositório.
+    - Role ate a seção **Danger Zone**.
+    - Clique em **Delete this repository** e confirme digitando o nome do repositório.
