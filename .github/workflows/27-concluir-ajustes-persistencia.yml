@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "28-validar-manualmente-persistencia.yml" \
             ".github/steps/27-concluir-ajustes-persistencia.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O esquema foi aplicado ao banco. Agora precisamos comprovar que todos os endpoints realmente compartilham essa persistência." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

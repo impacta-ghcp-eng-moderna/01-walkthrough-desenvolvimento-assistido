@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "36-encerramento.yml" \
             ".github/steps/35-executar-revisao-final-com-agente.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O custom agent está disponível para seleção. Agora vamos usá-lo para relacionar os critérios às evidências reproduzíveis." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

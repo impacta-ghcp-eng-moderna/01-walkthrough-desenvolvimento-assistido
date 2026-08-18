@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "" \
             "" \
-            "Excelente. Vamos encerrar o walkthrough." \
+            "A revisão final reuniu teste, OpenAPI e integração contínua. Com as evidências organizadas, podemos encerrar o walkthrough." \
             "Para encerrar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "final" \
             "$(cat .github/steps/36-encerramento.md)"

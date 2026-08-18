@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "07-criar-instrucoes-do-repositorio.yml" \
             ".github/steps/06-revisar-especificacao-com-copilot.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O primeiro rascunho está registrado. Vamos usar o Copilot para revelar lacunas sem transferir a ele as decisões do grupo." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

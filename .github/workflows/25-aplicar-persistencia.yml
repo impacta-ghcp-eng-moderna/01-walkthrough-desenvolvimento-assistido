@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "26-revisar-migration.yml" \
             ".github/steps/25-aplicar-persistencia.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A skill de revisão está disponível. Agora podemos inspecionar a migration e seus riscos antes de tocar no banco." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

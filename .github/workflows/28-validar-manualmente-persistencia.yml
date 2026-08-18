@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "29-conectar-com-interface.yml" \
             ".github/steps/28-validar-manualmente-persistencia.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O teste funcional percorreu o CRUD pela API pública. Vamos complementar a evidência inspecionando o comportamento e o banco manualmente." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

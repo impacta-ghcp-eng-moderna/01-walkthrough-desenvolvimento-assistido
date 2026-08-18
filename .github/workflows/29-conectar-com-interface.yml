@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "30-ajustar-integracao-interface.yml" \
             ".github/steps/29-conectar-com-interface.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A persistência está comprovada pela API e pelo banco. Agora vamos conectar a interface ao fluxo de criação já validado." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

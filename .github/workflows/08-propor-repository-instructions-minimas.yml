@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "09-atualizar-copilot-instructions.yml" \
             ".github/steps/08-propor-repository-instructions-minimas.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A especificação já está ligada às instruções. Vamos identificar quais outras orientações realmente devem valer para todo o repositório." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

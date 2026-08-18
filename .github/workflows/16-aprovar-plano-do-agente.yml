@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "17-propor-prompt-file-reutilizavel.yml" \
             ".github/steps/16-aprovar-plano-do-agente.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A nova regra e seu contrato foram propostos. A próxima decisão é humana: revisar e aprovar antes da implementação." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "16-aprovar-plano-do-agente.yml" \
             ".github/steps/15-pedir-generalizacao-em-prompt-file.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A validação revelou uma expectativa que ainda não fazia parte do contrato. Vamos explicitá-la antes de alterar o código." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

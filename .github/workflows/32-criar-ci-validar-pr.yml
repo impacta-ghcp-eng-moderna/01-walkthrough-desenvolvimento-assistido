@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "33-propor-custom-agent.yml" \
             ".github/steps/32-criar-ci-validar-pr.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O plano de integração contínua usa os comandos reais da solução. Vamos implementá-lo e comprovar sua execução em um Pull Request." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

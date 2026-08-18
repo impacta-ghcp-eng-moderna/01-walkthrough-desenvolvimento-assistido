@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "10-planejar-base-da-solucao.yml" \
             ".github/steps/09-atualizar-copilot-instructions.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "As instruções mínimas foram propostas. Agora revise o rascunho e registre somente as regras duráveis e comprovadas." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

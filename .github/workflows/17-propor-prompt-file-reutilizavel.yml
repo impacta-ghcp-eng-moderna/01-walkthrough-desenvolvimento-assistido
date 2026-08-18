@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "18-criar-create-training-endpoint-prompt.yml" \
             ".github/steps/17-propor-prompt-file-reutilizavel.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A regra foi incorporada com especificação, teste e código alinhados. Agora vamos generalizar o método usado nesse primeiro endpoint." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

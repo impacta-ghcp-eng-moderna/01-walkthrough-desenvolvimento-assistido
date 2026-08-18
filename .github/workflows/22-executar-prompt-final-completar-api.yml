@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "23-iniciar-persistencia.yml" \
             ".github/steps/22-executar-prompt-final-completar-api.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A atualização está definida e validada. Falta a exclusão para completar o conjunto de operações da API." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

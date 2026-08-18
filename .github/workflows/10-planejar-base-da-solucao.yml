@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "11-criar-base-da-solucao.yml" \
             ".github/steps/10-planejar-base-da-solucao.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O contexto permanente do repositório está pronto. Antes de criar arquivos, vamos tornar explícitas as decisões da base da solução." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

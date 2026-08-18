@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "34-criar-custom-agent-ou-alternativa.yml" \
             ".github/steps/33-propor-custom-agent.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O workflow passou e registrou as evidências da integração contínua. Agora vamos definir um agente especializado para revisar a entrega." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

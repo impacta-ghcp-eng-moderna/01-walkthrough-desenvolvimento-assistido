@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "03-propor-erros-sem-exemplo.yml" \
             ".github/steps/02-explorar-ambiguidades-do-cenario.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O ambiente está pronto. Antes de pensar em código, vamos descobrir quais decisões ainda estão escondidas no cenário." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

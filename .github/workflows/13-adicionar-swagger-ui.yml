@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "14-validar-primeiro-endpoint-na-swagger-ui.yml" \
             ".github/steps/13-adicionar-swagger-ui.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O primeiro endpoint já possui implementação e testes focados. Vamos torná-lo executável no navegador para observar seu contrato." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

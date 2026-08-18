@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "06-revisar-especificacao-com-copilot.yml" \
             ".github/steps/05-rascunhar-especificacao-fatia-vertical.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "A comparação mostrou como exemplos influenciam a resposta. Agora a turma transformará as decisões em uma especificação verificável." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

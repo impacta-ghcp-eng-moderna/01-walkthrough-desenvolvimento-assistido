@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "24-criar-skill-revisao-migration.yml" \
             ".github/steps/23-iniciar-persistencia.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
+            "O CRUD está completo sobre armazenamento temporário. Agora vamos substituir essa implementação por persistência sem alterar os contratos." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 
