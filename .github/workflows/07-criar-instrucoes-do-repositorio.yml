@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "08-propor-repository-instructions-minimas.yml" \
             ".github/steps/07-criar-instrucoes-do-repositorio.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "A revisão ajudou a fortalecer a especificação. Agora vamos garantir que o Copilot saiba consultá-la durante o restante do trabalho." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

@@ -35,6 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "21-aprovar-implementar-correcao-proposta.yml" \
             ".github/steps/20-criar-consulta-por-identificador.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "A primeira reutilização produziu a listagem. Agora vamos fornecer um novo contrato para consultar um item por identificador." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
+

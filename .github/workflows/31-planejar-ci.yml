@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "32-criar-ci-validar-pr.yml" \
             ".github/steps/31-planejar-ci.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "A primeira fatia vertical está completa e observável. Agora vamos planejar como repetir build e testes automaticamente no GitHub." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

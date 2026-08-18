@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "15-pedir-generalizacao-em-prompt-file.yml" \
             ".github/steps/14-validar-primeiro-endpoint-na-swagger-ui.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "A Swagger UI está disponível. Agora vamos executar casos reais e comparar o comportamento observado com a especificação." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

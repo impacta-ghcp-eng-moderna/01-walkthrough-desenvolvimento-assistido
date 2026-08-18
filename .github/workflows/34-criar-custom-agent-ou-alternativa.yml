@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "35-executar-revisao-final-com-agente.yml" \
             ".github/steps/34-criar-custom-agent-ou-alternativa.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "O perfil do revisor foi proposto com responsabilidades e limites claros. Vamos registrá-lo e confirmar que aparece no VS Code." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

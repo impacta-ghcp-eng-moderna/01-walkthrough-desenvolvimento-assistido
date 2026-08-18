@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "05-rascunhar-especificacao-fatia-vertical.yml" \
             ".github/steps/04-indicar-um-padrao-com-exemplos.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Você já viu a resposta sem exemplos. Vamos repetir a tarefa com um padrão explícito e comparar os resultados." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

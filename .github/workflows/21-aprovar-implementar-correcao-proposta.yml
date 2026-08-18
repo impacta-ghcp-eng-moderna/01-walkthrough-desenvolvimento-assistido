@@ -35,7 +35,7 @@ jobs:
             "${{ github.workflow }}" \
             "22-executar-prompt-final-completar-api.yml" \
             ".github/steps/21-aprovar-implementar-correcao-proposta.md" \
-            "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "A consulta individual ampliou a API sem mudar as convenções. Vamos reutilizar o mesmo fluxo para a atualização integral." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 
