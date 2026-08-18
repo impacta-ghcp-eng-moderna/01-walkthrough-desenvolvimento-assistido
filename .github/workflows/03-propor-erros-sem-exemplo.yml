@@ -36,6 +36,6 @@ jobs:
             "04-indicar-um-padrao-com-exemplos.yml" \
             ".github/steps/03-propor-erros-sem-exemplo.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

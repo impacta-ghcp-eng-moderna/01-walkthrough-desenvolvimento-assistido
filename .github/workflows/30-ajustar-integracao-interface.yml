@@ -36,6 +36,6 @@ jobs:
             "31-planejar-ci.yml" \
             ".github/steps/30-ajustar-integracao-interface.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

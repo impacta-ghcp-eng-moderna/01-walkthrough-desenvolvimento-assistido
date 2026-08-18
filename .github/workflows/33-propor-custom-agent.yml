@@ -36,6 +36,6 @@ jobs:
             "34-criar-custom-agent-ou-alternativa.yml" \
             ".github/steps/33-propor-custom-agent.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

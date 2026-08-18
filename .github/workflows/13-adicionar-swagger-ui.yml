@@ -36,6 +36,6 @@ jobs:
             "14-validar-primeiro-endpoint-na-swagger-ui.yml" \
             ".github/steps/13-adicionar-swagger-ui.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

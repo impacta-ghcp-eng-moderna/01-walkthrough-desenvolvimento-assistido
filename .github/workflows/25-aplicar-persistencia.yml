@@ -36,6 +36,6 @@ jobs:
             "26-revisar-migration.yml" \
             ".github/steps/25-aplicar-persistencia.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

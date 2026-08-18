@@ -36,6 +36,6 @@ jobs:
             "33-propor-custom-agent.yml" \
             ".github/steps/32-criar-ci-validar-pr.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

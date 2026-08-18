@@ -36,6 +36,6 @@ jobs:
             "07-criar-instrucoes-do-repositorio.yml" \
             ".github/steps/06-revisar-especificacao-com-copilot.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

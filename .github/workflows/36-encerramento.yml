@@ -36,7 +36,7 @@ jobs:
             "" \
             "" \
             "Excelente. Vamos encerrar o walkthrough." \
-            "Para encerrar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para encerrar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "final" \
             "$(cat .github/steps/36-encerramento.md)"
 

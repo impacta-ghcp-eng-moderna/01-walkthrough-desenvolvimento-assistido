@@ -36,5 +36,6 @@ jobs:
             "20-criar-consulta-por-identificador.yml" \
             ".github/steps/19-executar-prompt-file-primeira-vez.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
+

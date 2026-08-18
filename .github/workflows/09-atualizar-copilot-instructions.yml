@@ -36,6 +36,6 @@ jobs:
             "10-planejar-base-da-solucao.yml" \
             ".github/steps/09-atualizar-copilot-instructions.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 

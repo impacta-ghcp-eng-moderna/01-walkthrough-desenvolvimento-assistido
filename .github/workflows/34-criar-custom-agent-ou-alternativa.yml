@@ -36,6 +36,6 @@ jobs:
             "35-executar-revisao-final-com-agente.yml" \
             ".github/steps/34-criar-custom-agent-ou-alternativa.md" \
             "Perfeito! Vamos para o próximo passo do walkthrough." \
-            "Para avançar o walkthrough, comente `${{ env.STEP_TRIGGER_PHRASE }}` nesta issue." \
+            "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
 
