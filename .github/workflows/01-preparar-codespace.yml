@@ -35,7 +35,7 @@ jobs:
         id: check
         uses: actions/github-script@v9
         env:
-          REQUIRED_BRANCHES: checkpoint/00-inicio,checkpoint/01-especificar-fatia,checkpoint/02-criar-base-solucao,checkpoint/04-completar-api,checkpoint/05-adicionar-persistencia,checkpoint/06-conectar-interface,checkpoint/07-adicionar-evidencias
+          REQUIRED_BRANCHES: checkpoint/00-inicio,checkpoint/01-especificar-fatia,checkpoint/02-criar-base-solucao,checkpoint/03-implementar-primeiro-endpoint,checkpoint/04-completar-api,checkpoint/05-adicionar-persistencia,checkpoint/06-conectar-interface
         with:
           script: |
             const required = process.env.REQUIRED_BRANCHES.split(',').map(item => item.trim()).filter(Boolean);
@@ -105,5 +105,5 @@ jobs:
       - name: Enable next step workflow
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow enable "02-explorar-ambiguidades.yml"
+        run: gh workflow enable "02-explorar-ambiguidades-do-cenario.yml"
 
