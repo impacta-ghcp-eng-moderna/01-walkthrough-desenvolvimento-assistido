@@ -1,4 +1,4 @@
-name: Passo 30 - ajustar integracao interface
+name: Passo 26 - Aplicar a migration revisada
 
 on:
   issue_comment:
@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 env:
-  STEP_TRIGGER_PHRASE: feito
+  STEP_TRIGGER_PHRASE: validado
 
 jobs:
   progress_walkthrough:
@@ -33,9 +33,8 @@ jobs:
             "${{ github.event.comment.body }}" \
             "${{ env.STEP_TRIGGER_PHRASE }}" \
             "${{ github.workflow }}" \
-            "31-planejar-ci.yml" \
-            ".github/steps/30-ajustar-integracao-interface.md" \
-            "O caminho de sucesso já atravessa interface, API e banco. Vamos verificar também como a interface reage a uma falha de validação." \
+            "24-concluir-ajustes-persistencia.yml" \
+            ".github/steps/23-revisar-migration.md" \
+            "A migration foi revisada e os riscos ficaram explícitos. Depois da aprovação, vamos aplicá-la somente ao banco local de desenvolvimento." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
-

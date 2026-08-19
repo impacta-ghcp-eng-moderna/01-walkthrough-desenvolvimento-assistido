@@ -33,7 +33,7 @@ jobs:
             "${{ github.event.comment.body }}" \
             "${{ env.STEP_TRIGGER_PHRASE }}" \
             "${{ github.workflow }}" \
-            "19-executar-prompt-file-primeira-vez.yml" \
+            "19-utilizar-prompt-file.yml" \
             ".github/steps/18-criar-create-training-endpoint-prompt.md" \
             "O fluxo reutilizável foi proposto. Depois da revisão, vamos registrá-lo como um prompt file do repositório." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \

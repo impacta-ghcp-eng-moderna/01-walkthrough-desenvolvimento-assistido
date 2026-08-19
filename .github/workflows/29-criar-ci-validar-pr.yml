@@ -1,4 +1,4 @@
-name: Passo 19 - executar prompt file primeira vez
+name: Passo 32 - criar ci validar pr
 
 on:
   issue_comment:
@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 env:
-  STEP_TRIGGER_PHRASE: feito
+  STEP_TRIGGER_PHRASE: planejado
 
 jobs:
   progress_walkthrough:
@@ -33,9 +33,8 @@ jobs:
             "${{ github.event.comment.body }}" \
             "${{ env.STEP_TRIGGER_PHRASE }}" \
             "${{ github.workflow }}" \
-            "20-criar-consulta-por-identificador.yml" \
-            ".github/steps/19-executar-prompt-file-primeira-vez.md" \
-            "O prompt file está pronto. Vamos invocá-lo primeiro sem entradas e depois usá-lo para criar a listagem." \
+            "30-propor-custom-agent.yml" \
+            ".github/steps/29-criar-ci-validar-pr.md" \
+            "O plano de integração contínua usa os comandos reais da solução. Vamos implementá-lo e comprovar sua execução em um Pull Request." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
-
