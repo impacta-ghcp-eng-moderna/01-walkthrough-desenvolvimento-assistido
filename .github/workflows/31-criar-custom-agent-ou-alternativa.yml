@@ -1,4 +1,4 @@
-name: Passo 27 - Comprovar o CRUD persistido
+name: Passo 34 - criar custom agent ou alternativa
 
 on:
   issue_comment:
@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 env:
-  STEP_TRIGGER_PHRASE: feito
+  STEP_TRIGGER_PHRASE: planejado
 
 jobs:
   progress_walkthrough:
@@ -33,9 +33,8 @@ jobs:
             "${{ github.event.comment.body }}" \
             "${{ env.STEP_TRIGGER_PHRASE }}" \
             "${{ github.workflow }}" \
-            "28-validar-manualmente-persistencia.yml" \
-            ".github/steps/27-concluir-ajustes-persistencia.md" \
-            "O esquema foi aplicado ao banco. Agora precisamos comprovar que todos os endpoints realmente compartilham essa persistência." \
+            "32-executar-revisao-final-com-agente.yml" \
+            ".github/steps/31-criar-custom-agent-ou-alternativa.md" \
+            "O perfil do revisor foi proposto com responsabilidades e limites claros. Vamos registrá-lo e confirmar que aparece no VS Code." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
-

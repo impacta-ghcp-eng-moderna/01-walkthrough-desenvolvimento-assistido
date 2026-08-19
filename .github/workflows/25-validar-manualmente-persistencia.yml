@@ -1,4 +1,4 @@
-name: Passo 35 - executar revisao final com agente
+name: Passo 28 - validar manualmente persistencia
 
 on:
   issue_comment:
@@ -10,7 +10,7 @@ permissions:
   issues: write
 
 env:
-  STEP_TRIGGER_PHRASE: feito
+  STEP_TRIGGER_PHRASE: validado
 
 jobs:
   progress_walkthrough:
@@ -33,9 +33,8 @@ jobs:
             "${{ github.event.comment.body }}" \
             "${{ env.STEP_TRIGGER_PHRASE }}" \
             "${{ github.workflow }}" \
-            "36-encerramento.yml" \
-            ".github/steps/35-executar-revisao-final-com-agente.md" \
-            "O custom agent está disponível para seleção. Agora vamos usá-lo para relacionar os critérios às evidências reproduzíveis." \
+            "26-conectar-com-interface.yml" \
+            ".github/steps/25-validar-manualmente-persistencia.md" \
+            "O teste funcional percorreu o CRUD pela API pública. Vamos complementar a evidência inspecionando o comportamento e o banco manualmente." \
             "Para avançar o walkthrough, comente \`${{ env.STEP_TRIGGER_PHRASE }}\` nesta issue." \
             "next"
-
