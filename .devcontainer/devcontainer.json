@@ -1,5 +1,5 @@
 {
-  "name": "Modulo 01",
+  "name": "01-desenvolvimento-assistido",
   "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
   "postCreateCommand": "dotnet --info",
   "forwardPorts": [5075],
